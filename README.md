@@ -36,12 +36,4 @@ I began by setting up the **Backend Logic**. I created a `BinancePriceService` u
 
 Next, I built the **Telegram Bot interface**. I extended `TelegramLongPollingBot` to parse incoming text messages. I learned how to process commands (using string splitting) to trigger my `TradingService`, which handles the business logic: checking if a user has enough funds, calculating costs, and updating the database transactionally.
 
-Finally, I expanded the project to the **Web**. This was a major shift from a "Chat" mindset to a "View" mindset. I used **Thymeleaf** to create HTML templates (`login.html`, `dashboard.html`). I learned about `HttpSession` to maintain user state across different pages. The coolest part was re-using the exact same `TradingService` for both the Telegram Bot and the Web Controller—proving that a solid backend structure allows you to plug in any frontend interface you want.
-
----
-
-## ⚙️ Installation & Run
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/cryptobot.git
+Finally, I expanded the project to the **Web**. This was a major shift from a "Chat" mindset to a "View" mindset. I used **Thymeleaf** to create HTML templates (`login.html`, `dashboard.html`). I learned about `HttpSession` to maintain user state across different pages. The best part was re-using the exact same `TradingService` for both the Telegram Bot and the Web Controller—proving that a solid backend structure allows you to plug in any frontend interface you want.
