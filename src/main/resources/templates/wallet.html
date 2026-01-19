@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wallet</title>
+</head>
+<body>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+<h1>My Wallet</h1>
+
+<div th:if="${wallettxt}">
+
+    <pre th:text="${wallettxt}" style="font-size: 1.2em;"></pre>
+
+</div>
+
+<div th:unless="${wallettxt}">
+    <p>Loading wallet...</p>
+</div>
+
+</body>
+</html>

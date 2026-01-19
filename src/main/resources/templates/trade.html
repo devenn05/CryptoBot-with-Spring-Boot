@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trade Crypto</title>
+</head>
+<body>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+<h1>Trade Crypto</h1>
+
+<form action="/trade" method="post">
+
+    <!-- Symbol Input -->
+    <div>
+        <label>Symbol (e.g. BTC):</label><br>
+        <input type="text" name="symbol" required>
+    </div>
+
+    <br>
+
+    <!-- Quantity Input -->
+    <div>
+        <label>Quantity:</label><br>
+        <!-- Step allows decimals -->
+        <input type="number" step="any" name="quantity" required>
+    </div>
+
+    <br>
+
+    <!-- TWO BUTTONS acting as input for 'action' -->
+    <button type="submit" name="action" value="BUY">BUY</button>
+    <button type="submit" name="action" value="SELL">SELL</button>
+
+</form>
+
+<hr>
+
+<!-- Error Message -->
+<div th:if="${error}" style="color: red;">
+    <h3>Error:</h3>
+    <p th:text="${error}"></p>
+</div>
+
+<!-- Success Message from TradingService -->
+<!-- The service returns Strings with newlines, so we use style to preserve them -->
+<div th:if="${message}" style="border: 1px solid black; padding: 10px;">
+    <h3>Transaction Report:</h3>
+    <pre th:text="${message}"></pre>
+</div>
+
+</body>
+</html>

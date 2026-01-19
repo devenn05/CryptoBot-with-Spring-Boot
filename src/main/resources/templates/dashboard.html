@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Welcome, <span th:text="${name}">User</span>!</h1>
+
+<p>Select an option:</p>
+
+<a href="/price">
+    <button>Get Price</button>
+</a>
+
+<!-- UPDATED LINK HERE -->
+<a href="/trade">
+    <button>Trade Crypto</button>
+</a>
+
+<a href="/wallet">
+    <button>Wallet</button>
+</a>
+
+</body>
+</html>

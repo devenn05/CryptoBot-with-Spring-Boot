@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Check Price</title>
+</head>
+<body>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+<h1>Check Price Page</h1>
+
+<!-- FORM -->
+<form action="/price" method="post">
+    <label>Symbol:</label>
+    <input type="text" name="symbol" placeholder="BTC" required>
+    <button type="submit">Get Price</button>
+</form>
+
+<hr>
+
+<!-- ERROR MESSAGE -->
+<div th:if="${error}">
+    <p th:text="${error}">Error goes here</p>
+</div>
+
+<!-- RESULT -->
+<div th:if="${ticker}">
+    <h3>Result:</h3>
+    <p>Symbol: <b th:text="${ticker.symbol}"></b></p>
+    <p>Price: <b th:text="${ticker.lastPrice}"></b></p>
+    <p>High Price: <span th:text="${ticker.highPrice}"></span></p>
+    <p>Low Price: <span th:text="${ticker.lowPrice}"></span></p>
+    <p>Change: <span th:text="${ticker.priceChangePercent}"></span>%</p>
+</div>
+
+</body>
+</html>
