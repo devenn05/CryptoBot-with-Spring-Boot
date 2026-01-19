@@ -4,4 +4,5 @@ import com.learning.cryptobot.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
+    // No extra code needed! Standard CRUD (Create, Read, Update, Delete) is built-in.
 }

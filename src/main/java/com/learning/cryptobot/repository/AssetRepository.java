@@ -7,10 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AssetRepository extends JpaRepository<Asset, Long> {
-
-    //Doubt
+    // Returns Optional<> because the user might NOT have this asset yet.
     Optional<Asset> findByChatIdAndSymbol(Long chatId, String symbol);
     List<Asset> findByChatId(Long chatId);
-
 
 }

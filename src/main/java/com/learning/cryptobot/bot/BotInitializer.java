@@ -6,16 +6,17 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-@Configuration
+@Configuration // Runs during application startup
 public class BotInitializer {
 
     @Bean
     public TelegramBotsApi telegramBotsApi(CryptoBot cryptoBot) throws TelegramApiException {
 
-        // 1. Create the API instance
+        // Create the API instance (Handles the connection sessions)
         TelegramBotsApi api = new TelegramBotsApi(DefaultBotSession.class);
 
-        // 2. Register your bot! (This is the "Turning the key" moment)
+        // Register your specific bot instance!
+        // This links your logic (onUpdateReceived) to the incoming web requests.
         api.registerBot(cryptoBot);
 
         return api;
